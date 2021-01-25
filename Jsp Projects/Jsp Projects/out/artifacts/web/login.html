@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            document.getElementById('checkCodeImg').onclick = function () {
+                this.src = "checkCodeServlet?time=" + new Date().getTime();
+            }
+        }
+    </script>
+</head>
+<body>
+<form action="LoginServlet" method="POST">
+    username：&nbsp;&nbsp;<input type="text" name="username">
+    <br>
+    password：  &nbsp;<input type="password" name="password">
+    <br>
+    checkcode：&nbsp;<input type="text" name="checkCode"><br>
+    <img src="checkCodeServlet" id="checkCodeImg"><br>
+    <input type="submit" value="submit">
+</form>
+</body>
+</html>
